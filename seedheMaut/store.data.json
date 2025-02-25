@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "KSHAMA",
+    "imgSrc": "images/Album1.jpeg",
+    "quantity": 1,
+    "price":  1299999.99
+  },
+  {
+    "id": 2,
+    "name": "LUNCH BOX",
+    "imgSrc": "images/Album2.jpeg",
+    "quantity": 1,
+    "price": ""
+  },
+  {
+    "id": 3,
+    "name": "BAYAAN",
+    "imgSrc": "images/Album3.jpeg",
+    "quantity": 1,
+    "price": 1299999.99
+  },
+  {
+    "id": 4,
+    "name": "NAYAAB",
+    "imgSrc": "images/Album4.jpeg",
+    "quantity": 1,
+    "price": 1299999.99
+  },
+  {
+    "id": 5,
+    "name": "",
+    "imgSrc": "",
+    "quantity": 1,
+    "price": 1299999.99
+  }
+]

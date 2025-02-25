@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap");
+
+@font-face {
+  font-family: "Booter - Zero Zero";
+  src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+    url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Raleway;
+  /* color: #777; */
+}
+
+/* header part */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav ul {
+  margin: 0;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.main-nav {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: lighter;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: red;
+}
+
+.main-nav li {
+  padding: 0 5%;
+}
+
+.main-nav li:first-child {
+  padding: 0 1%;
+  color: white;
+  margin-right: 300px;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* .main-header {
+  background-color: rgba(0, 0, 0, .6);
+  background-image: url("images/Untitled\ design\ \(3\).gif");
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding-bottom: 30px;
+} */
+
+.band-name-large {
+  font-size: 8em;
+  background-image: url("images/seedhe\ car\ sen.gif");
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.band-name {
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  font-family: "UnifrakturMaguntia", serif;
+  font-weight: normal;
+  color: white;
+}
+.maut {
+  font-family: "UnifrakturMaguntia", serif;
+  color: red;
+}
+.band-name-large {
+  font-size: 8em;
+}
+
+.upcoming {
+  font-size: 4rem;
+  margin: 17px;
+}
+.events {
+  text-align: center;
+  color: #131313;
+}
+
+.container {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+
+button {
+  background-color: #f8f8f8;
+  color: black;
+  border: 2px solid gray;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 300px;
+  height: 45px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #423c3c;
+  color: #fff;
+}
+
+
+
+
+/* popup */
+.popup-relative{
+  position: relative;
+}
+
+.popup {
+  width: 400px;
+  background: rgb(255, 255, 255);
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(8px 8px 30px rgb(13, 74, 241));
+}
