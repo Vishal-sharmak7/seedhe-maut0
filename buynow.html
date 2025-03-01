@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUY</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./purchase.css" />
+    <link rel="stylesheet" href="./booking-form.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="main-header">
+      <nav class="nav main-nav">
+          <div class="logo">
+              <h1>𝖘𝖊𝖊𝖉𝖍𝖊 𝖒𝖆𝖚𝖙</h1>
+          </div>
+          <ul id="menuList">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="store.html">STORE</a></li>
+              <li><a href="song.html">SONGS</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+          </ul>
+          <div class="menu-icon">
+              <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+          </div>
+      </nav>
+  </header>
+  <h1 class="band-name band-name-large">Tera Bhai Seedhe <span class="maut">Maut</span></h1>
+    <form action="" id="booking-form" class="booking-form">
+      <center>
+        <div>
+          <h1>BUY NOW</h1>
+        </div>
+   
+       <section>
+         <div>
+           <h5>Item Name:</h5>
+           <p id="item-name"></p>
+         </div>
+         <div>
+           <h5>Item Image:</h5>
+           <img id="item-image" src="" alt="" style="width: 200px;" />
+         </div>
+         <div>
+           <h5>Item Quantity:</h5>
+           <p id="item-quantity"></p>
+         </div>
+         <div>
+           <h5>Item Price:</h5>
+           <p id="item-price"></p>
+         </div>
+       </section>
+ 
+    
+     <div class="button-wrapper">
+       <button type="submit">Submit</button>
+     </div>
+     </center>
+    </form>
+
+    <!-- Booking Form Popup -->
+    <div class="popup" id="popup">
+      <img src="./images/file.png" alt="" />
+      <h2>Thank You!!</h2>
+      <p>
+        Your details has been successfully sumbmitted. and reach out shortly
+        <br />
+        Thanks.
+      </p>
+      <button type="button" onclick="onPopupClosed()">OK</button>
+    </div>
+  </div>
+
+    
+    <footer class="main-footer">
+      <div class="container main-footer-container">
+        <h3 class="band-name">The Seedhe Maut</h3>
+        <ul class="nav footer-nav">
+          <li>
+            <a href="https://www.youtube.com/@SeedheMaut" target="_blank">
+              <img src="images/YouTube Logo.png" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://open.spotify.com/artist/2oBG74gAocPMFv6Ij9ykdo"
+              target="_blank"
+            >
+              <img src="images/Spotify Logo.png" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/SeedheMaut/" target="_blank">
+              <img src="images/Facebook Logo.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    
+    <script src="./booking-form.js"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/2011d53d58.js" crossorigin="anonymous"></script>
+    <script>
+      window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        const { id } = Object.fromEntries(params.entries());
+        const itemName = document.getElementById("item-name");
+        const itemImage = document.getElementById("item-image");
+        const itemQuantity = document.getElementById("item-quantity");
+        const itemPrice = document.getElementById("item-price");
+
+        fetch("./store.data.json")
+          .then((data) => data.json())
+          .then((res) => {
+            const data = res.filter((f) => f.id === Number(id))[0];
+
+            itemName.innerText = data.name;
+            itemImage.src = data.imgSrc;
+            itemQuantity.innerText = data.quantity;
+            itemPrice.innerText = data.price;
+          });
+      };
+    </script>
+  </body>
+</html>

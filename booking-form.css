@@ -1,0 +1,50 @@
+.popup-relative{
+  position: relative;
+}
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.input-groups {
+  display: flex;
+  gap: 20px;
+}
+.input-groups .input-wrapper {
+  flex: 1;
+}
+
+.input-groups .input-wrapper input {
+  width: 100%;
+  padding: 12px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.heading{
+    font-size: 40px;
+    margin: 12px 0;
+    text-align: center;
+}
+.heading.title{
+    font-size: 28px;
+    margin-bottom: 20px !important;
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .input-groups {
+    flex-direction: column;
+  }
+  .input-wrapper.extra {
+    display: none;
+  }
+}
