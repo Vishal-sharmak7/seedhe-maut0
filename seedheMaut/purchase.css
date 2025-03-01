@@ -4,147 +4,140 @@
 @font-face {
   font-family: "Booter - Zero Zero";
   src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
-    url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+       url("Fonts/Booter - Zero Zero.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 * {
   box-sizing: border-box;
-  font-family: Raleway;
-  /* color: #777; */
+  font-family: Raleway, sans-serif;
 }
 
-/* header part */
-html,body{
-  height: 100%;
-  width: 100%;
-  background: #3498db;
+html, body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
 }
 
-nav{
+/* Navigation */
+nav {
   padding: 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #004274;
+  background: #ff0000;
   position: relative;
   height: 70px;
 }
 
-.logo{
+.logo {
   color: #fff;
 }
 
-nav ul{
+nav ul {
   display: flex;
   gap: 30px;
   align-items: center;
 }
 
-nav ul li{
+nav ul li {
   list-style-type: none;
 }
 
-nav ul li a{
+nav ul li a {
   text-decoration: none;
   color: #fff;
 }
 
-.menu-icon{
+.menu-icon {
   display: none;
 }
 
-.menu-icon i{
+.menu-icon i {
   color: #fff;
   font-size: 30px;
 }
 
-@media (max-width:600px) {
-  nav ul{
-      position: absolute;
-      top: 70px;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      text-align: center;
-      background: #004274;
-      gap: 0;
-      overflow: hidden;
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    background: #ff0000;
+    gap: 0;
+    overflow: hidden;
+    z-index: 1;
   }
-  nav ul li{
-      padding: 20px;
-      padding-top: 0;
+
+  nav ul li {
+    padding: 15px;
   }
-  .menu-icon{
-      display: block;
+
+  .menu-icon {
+    display: block;
   }
-  #menuList{
-      transition: all 0.5s;
+
+  #menuList {
+    transition: all 0.5s;
   }
 }
 
-/* .main-header {
-  background-color: rgba(0, 0, 0, .6);
-  background-image: url("images/Untitled\ design\ \(3\).gif");
-  background-blend-mode: multiply;
-  background-size: cover;
-  padding-bottom: 30px;
-} */
-
+/* Header */
 .band-name-large {
-  font-size: 8em;
+  font-size: 6em;
   background-image: url("images/seedhe\ car\ sen.gif");
   background-blend-mode: multiply;
   background-size: cover;
   padding-bottom: 30px;
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-.band-name {
   text-align: center;
-  margin: 0;
-  font-size: 2em;
-  font-family: "UnifrakturMaguntia", serif;
-  font-weight: normal;
-  color: white;
 }
 .maut {
   font-family: "UnifrakturMaguntia", serif;
   color: red;
 }
-.band-name-large {
-  font-size: 8em;
+
+.band-name {
+  margin: 0;
+  font-family: "UnifrakturMaguntia", serif;
+  font-weight: normal;
+  color: white;
 }
 
 .upcoming {
   font-size: 4rem;
   margin: 17px;
+  text-align: center;
 }
+
 .events {
   text-align: center;
   color: #131313;
 }
 
+/* General Container */
 .container {
-  margin-right: 15px;
-  margin-left: 15px;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
 }
 
-.container .title {
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-}
-
-
+/* Buttons */
 button {
   background-color: #f8f8f8;
   color: black;
   border: 2px solid gray;
   cursor: pointer;
   border-radius: 8px;
-  width: 300px;
+  width: 250px;
   height: 45px;
   transition: 0.3s;
 }
@@ -154,20 +147,25 @@ button:hover {
   color: #fff;
 }
 
+/* Responsive Button */
+@media (max-width: 480px) {
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
 
-
-
-/* popup */
-.popup-relative{
+/* Popup */
+.popup-relative {
   position: relative;
 }
 
 .popup {
-  width: 400px;
+  width: 40vw;
   background: rgb(255, 255, 255);
   border-radius: 6px;
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
@@ -180,12 +178,21 @@ button:hover {
 
 .open-popup {
   visibility: visible;
-  top: 50%;
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* Responsive Popup */
+@media (max-width: 768px) {
+  .popup {
+    width: 80%;
+    padding: 15px;
+  }
+}
+
 .popup img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   filter: drop-shadow(8px 8px 30px rgb(13, 74, 241));
 }
+
+

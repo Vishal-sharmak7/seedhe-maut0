@@ -11,7 +11,7 @@
     "name": "LUNCH BOX",
     "imgSrc": "images/Album2.jpeg",
     "quantity": 1,
-    "price": ""
+    "price": 1299999.99
   },
   {
     "id": 3,
@@ -29,9 +29,16 @@
   },
   {
     "id": 5,
-    "name": "",
-    "imgSrc": "",
+    "name": "T-Shirt",
+    "imgSrc": "images/tshirt.jpeg",
     "quantity": 1,
-    "price": 1299999.99
+    "price": 1299.99
+  },
+  {
+    "id": 6,
+    "name": "Cup",
+    "imgSrc": "images/cup.jpg",
+    "quantity": 1,
+    "price": 999.99
   }
 ]

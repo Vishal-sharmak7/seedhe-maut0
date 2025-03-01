@@ -12,18 +12,21 @@
     <!-- header -->
     <header class="main-header">
       <nav class="nav main-nav">
-        <ul>
-          <li>𝖘𝖊𝖊𝖉𝖍𝖊 𝖒𝖆𝖚𝖙</li>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="store.html">STORE</a></li>
-          <li><a href="song.html">SONGS</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-        </ul>
+          <div class="logo">
+              <h1>𝖘𝖊𝖊𝖉𝖍𝖊 𝖒𝖆𝖚𝖙</h1>
+          </div>
+          <ul id="menuList">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="store.html">STORE</a></li>
+              <li><a href="song.html">SONGS</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+          </ul>
+          <div class="menu-icon">
+              <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+          </div>
       </nav>
-      <h1 class="band-name band-name-large">
-        Tera Bhai Seedhe <span class="maut">Maut</span>
-      </h1>
-    </header>
+  </header>
+  <h1 class="band-name band-name-large">Tera Bhai Seedhe <span class="maut">Maut</span></h1>
     <form action="" id="booking-form" class="booking-form">
       <center>
         <div>
@@ -37,7 +40,7 @@
          </div>
          <div>
            <h5>Item Image:</h5>
-           <img id="item-image" src="" alt="" />
+           <img id="item-image" src="" alt="" style="width: 200px;" />
          </div>
          <div>
            <h5>Item Quantity:</h5>
@@ -97,7 +100,8 @@
     </footer>
     
     <script src="./booking-form.js"></script>
-
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/2011d53d58.js" crossorigin="anonymous"></script>
     <script>
       window.onload = function () {
         const params = new URLSearchParams(window.location.search);
