@@ -420,7 +420,7 @@ body {
     .mautvid video {
       width: 100%;
       height: auto;
-      padding: 0;
+      padding: 20px;
       margin: 0;
     }
   

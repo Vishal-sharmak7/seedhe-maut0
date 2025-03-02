@@ -178,7 +178,7 @@ button:hover {
 
 .open-popup {
   visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, 0%) scale(1);
 }
 
 /* Responsive Popup */
@@ -186,6 +186,10 @@ button:hover {
   .popup {
     width: 80%;
     padding: 15px;
+  }
+  .open-popup {
+    visibility: visible;
+    transform: translate(-50%, 140%) scale(1);
   }
 }
 
