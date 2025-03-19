@@ -3,146 +3,152 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Concert Booking - Seedhe Maut</title>
     <link rel="stylesheet" href="./purchase.css" />
     <link rel="stylesheet" href="./booking-form.css" />
-
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header Section -->
     <header class="main-header">
       <nav class="nav main-nav">
-          <div class="logo">
-              <h1>𝖘𝖊𝖊𝖉𝖍𝖊 𝖒𝖆𝖚𝖙</h1>
-          </div>
-          <ul id="menuList">
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="store.html">STORE</a></li>
-              <li><a href="song.html">SONGS</a></li>
-              <li><a href="about.html">ABOUT</a></li>
-          </ul>
-          <div class="menu-icon">
-              <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-          </div>
+        <div class="logo">
+          <h1>𝖘𝖊𝖊𝖉𝖍𝖊 𝖒𝖆𝖚𝖙</h1>
+        </div>
+        <ul id="menuList">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="store.html">STORE</a></li>
+          <li><a href="song.html">SONGS</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+        </ul>
+        <div class="menu-icon">
+          <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
       </nav>
-  </header>
-  <h1 class="band-name band-name-large">Tera Bhai Seedhe <span class="maut">Maut</span></h1>
+    </header>
+
+    <!-- Booking Form Section -->
+    <h1 class="band-name band-name-large">
+      Tera Bhai Seedhe <span class="maut">Maut</span>
+    </h1>
 
     <div class="popup-relative">
-      <!-- Booking Header -->
-      <h2 class="heading">Booking</h2>
-      <h4 class="heading title">Personal Details</h4>
+      <h2 class="heading">Concert Booking</h2>
+      <h4 class="heading title">Enter Your Details</h4>
 
-      <!-- Booking Form Container -->
-      <form id="booking-form" class="booking-form" >
+      <form id="booking-form" class="booking-form">
         <div class="input-groups">
           <div class="input-wrapper">
             <input
               type="text"
+              id="name"
               placeholder="Enter your name"
               required
-              name=""
-              value=""
-              id=""
             />
           </div>
           <div class="input-wrapper">
             <input
               type="number"
+              id="age"
               placeholder="Enter your age"
               required
-              name=""
-              value=""
-              id=""
             />
           </div>
         </div>
+
         <div class="input-groups">
           <div class="input-wrapper">
             <input
               type="email"
+              id="email"
               placeholder="Enter your email"
               required
-              name=""
-              value=""
-              id=""
             />
           </div>
           <div class="input-wrapper">
             <input
               type="text"
+              id="city"
               placeholder="Enter your city"
               required
-              name=""
-              value=""
-              id=""
             />
           </div>
         </div>
+
         <div class="input-groups">
           <div class="input-wrapper">
             <input
               type="number"
+              id="phone"
               placeholder="Enter your mobile number"
               required
-              name=""
-              value=""
-              id=""
-            />
-          </div>
-          <div class="input-wrapper extra" style="visibility: hidden">
-            <input
-              type="text"
-              placeholder="Enter your mobile number"
-              name=""
-              id=""
             />
           </div>
         </div>
+
         <div class="button-wrapper">
           <button type="submit">Submit</button>
         </div>
       </form>
 
-      <!-- Booking Form Popup -->
+      <!-- Thank You Popup -->
       <div class="popup" id="popup">
-        <img src="./images/file.png" alt="" />
-        <h2>Thank You!!</h2>
+        <img src="./images/file.png" alt="Success" />
+        <h2>Thank You!</h2>
         <p>
-          Your details has been successfully sumbmitted. and reach out shortly
-          <br />
-          Thanks.
+          Your booking details have been successfully submitted. We will reach
+          out shortly.
         </p>
         <button type="button" onclick="onPopupClosed()">OK</button>
       </div>
     </div>
+
+    <!-- JavaScript -->
     <script>
       document.getElementById("booking-form").addEventListener("submit", async function (event) {
-          event.preventDefault();
+    event.preventDefault();
 
-          const userData = {
-              name: document.getElementById("name").value,
-              age: document.getElementById("age").value,
-              email: document.getElementById("email").value,
-              city: document.getElementById("city").value,
-              phone: document.getElementById("phone").value,
-          };
+    const userData = {
+        name: document.getElementById("name").value,
+        age: document.getElementById("age").value,
+        email: document.getElementById("email").value,
+        city: document.getElementById("city").value,
+        phone: document.getElementById("phone").value,
+    };
 
-          try {
-              const response = await fetch("http://localhost:5000/register", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(userData),
-              });
+    try {
+        const response = await fetch("http://localhost:5000/api/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json", 
+            },
+            body: JSON.stringify(userData), 
+        });
 
-              const result = await response.json();
-              alert(result.message);
-          } catch (error) {
-              alert("Error submitting form. Please try again.");
-          }
-      });
-  </script>
-    <script src="https://kit.fontawesome.com/2011d53d58.js" crossorigin="anonymous"></script>
+        const result = await response.json();
+
+        if (response.ok) {
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert(result.message || "Error submitting form.");
+        }
+    } catch (error) {
+        alert("Error submitting form. Please check server logs.");
+        console.error("Fetch Error:", error);
+    }
+});
+
+
+      function onPopupClosed() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("booking-form").reset();
+      }
+    </script>
+
+    <script
+      src="https://kit.fontawesome.com/2011d53d58.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./booking-form.js"></script>
     <script src="app.js"></script>
   </body>
